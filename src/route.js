@@ -11,11 +11,11 @@ export const routes = [{
   },
   {
     // passing data with url
-    path: '/useredit/:id/:name',
-    component: userEdit
-  }, {
-    // passing data with url
     path: '/useredit',
-    component: userEdit
+    component: userEdit,
+    children: [{
+      path: ':id/:name',
+      component: userEdit
+    }]
   }
 ]
