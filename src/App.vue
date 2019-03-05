@@ -22,6 +22,9 @@
       >
     </div>
     <button v-on:click="submit" class="btn btn-primary">Submit</button>
+    <ul>
+      <ol v-for="(item, index) in data" :key="index">{{item.name}}</ol>
+    </ul>
   </div>
 </template>
 
@@ -32,16 +35,14 @@ export default {
       user: {
         userName: "",
         mail: ""
-      }
+      },
+      data: []
     };
   },
   methods: {
     submit() {
       this.$http
-        .post(
-          "https://vueproject-1c792.firebaseio.com/data/data.json",
-          this.user
-        )
+        .post("http://vueadmin.devs/api/user", this.user)
         .then(response => {
           console.log(response);
         })
@@ -49,6 +50,21 @@ export default {
           console.log(e);
         });
     }
+  },
+
+  created() {
+    this.$http
+      .get("http://vueadmin.devs/api/user")
+      .then(response => {
+        return response.json();
+        //console.log(data);
+      })
+      .then(data => {
+        this.data = data.data;
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 };
 </script>
