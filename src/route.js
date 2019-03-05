@@ -1,6 +1,7 @@
 import user from './components/Users.vue'
 import userDetails from './components/UserDetails.vue'
 import userEdit from './components/UserEdit.vue'
+import Header from './components/Header.vue'
 export const routes = [{
     path: '/user',
     component: user
@@ -17,5 +18,12 @@ export const routes = [{
       path: ':id/:name',
       component: userEdit
     }]
+  },
+  {
+    path: "/newHeader",
+    components: {
+      default: Header,
+      'second': Header
+    }
   }
 ]
