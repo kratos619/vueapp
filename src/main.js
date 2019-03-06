@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource';
-
+import {
+  store
+} from './store/store'
 Vue.use(VueResource)
 
 Vue.config.productionTip = false
@@ -12,6 +14,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   components: {
     App
   },
