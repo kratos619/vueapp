@@ -1,48 +1,48 @@
 <template>
   <div id="app">
-    <ProgreeBar :quoteCount="quots.length" :maxQuotes="maxQuotes"></ProgreeBar>
-    <CreateQuots @quoteAdded="newQuote"></CreateQuots>
-    <OuoteGrid :quots="quots" @quoteDelete="deletequote"></OuoteGrid>
-    <p class="lead">clik on quots to delete</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for>Enter Quotes</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Quotes"
+                aria-describedby="helpId"
+              >
+            </div>
+            <div class="form-group">
+              <input type="button" value="POST" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <p v-for="(item, index) in quotes" :key="index">{{quotes.content}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import ProgreeBar from "./components/HeaderProgreebar.vue";
-import CreateQuots from "./components/CreateQuots";
-import OuoteGrid from "./components/QuoteGrid";
-import Quote from "./components/Quote.vue";
-import Author from "./components/Author.vue";
-import New from "./components/New.vue";
 export default {
-  name: "App",
   data() {
     return {
-      maxQuotes: 10,
-      quots: ["a wondeerfull quote"]
+      quotes: []
     };
   },
-  methods: {
-    newQuote(quot) {
-      if (this.quots.length >= this.maxQuotes) {
-        alert("only 10 quots");
-      } else {
-        this.quots.push(quot);
-      }
-      console.log(this.quots);
-    },
-    deletequote(index) {
-      this.quots.splice(index, 1);
-      console.log(this.quots);
-    }
-  },
-  components: {
-    CreateQuots,
-    OuoteGrid,
-    ProgreeBar,
-    Quote,
-    Author,
-    New
+
+  mounted() {
+    axios
+      .get("http://127.0.0.1:8000/api/quotes")
+      .then(response => {
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 };
 </script>

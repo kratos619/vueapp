@@ -4,8 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource';
-
+window.axios = require('axios');
 Vue.use(VueResource)
+Vue.use(axios)
 
 Vue.config.productionTip = false
 
