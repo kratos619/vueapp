@@ -2,7 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+//import bootstrap from 'bootstrap/dist/css/bootstrap.css'
+// require("materialize-css/dist/css/materialize.css");
+// require("materialize-css/dist/js/materialize.js");
+
+require('bootstrap/dist/css/bootstrap-grid.css')
+require('bulma/css/bulma.min.css');
 import VueResource from 'vue-resource';
 import {
   store
