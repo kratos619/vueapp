@@ -4,14 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import bootstrap from 'bootstrap/dist/css/bootstrap.css'
 import VueResource from 'vue-resource';
+import AdminLogin from './auth/Admin-login.js';
 
 Vue.use(VueResource)
-
+Vue.use(AdminLogin)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+
   components: {
     App
   },
