@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>this is Author</h1>
-  </div>
+  <div>candidate</div>
 </template>
 
 <script>

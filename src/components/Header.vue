@@ -1,12 +1,10 @@
 <template>
-  <li>
-    <slot></slot>
-  </li>
+  <div>Header</div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style scope>
+<style scoped>
 </style>
