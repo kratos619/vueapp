@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header class="p-4"></header>
     <div class="container">
+      <header></header>
       <div class="row">
         <div class="col-md-6">
           <Candidate></Candidate>
