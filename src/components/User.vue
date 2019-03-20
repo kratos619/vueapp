@@ -11,10 +11,11 @@
           v-on:sendDataToParent="readDataFromChild = $event"
           :myName="name"
           :childComponentMethodName="resetNameByParentComponent"
+          :userAge="age"
         ></app-user-detail>
       </div>
       <div class="col-12 col-sm-6">
-        <app-user-edit></app-user-edit>
+        <app-user-edit :userAge="age"></app-user-edit>
       </div>
     </div>
   </div>
@@ -28,7 +29,8 @@ export default {
   data() {
     return {
       readDataFromChild: "",
-      name: "gaurav"
+      name: "gaurav",
+      age: ""
     };
   },
   methods: {

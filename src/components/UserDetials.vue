@@ -3,6 +3,7 @@
     <h3>You may view the User Details here</h3>
     <p>Many Details</p>
     <p>use Name : {{myName}}</p>
+    <p>User Age : {{userAge}}</p>
     <button v-on:click="resetName">reset Nmae</button>
     <button v-on:click="childComponentMethodName">rest Name</button>
   </div>
@@ -13,7 +14,8 @@ export default {
   props: {
     myName: "",
     secondData: "",
-    childComponentMethodName: Function
+    childComponentMethodName: Function,
+    userAge: ""
   },
   methods: {
     switchName() {
