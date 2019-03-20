@@ -2,11 +2,11 @@
   <div class="component">
     <h1>The User Component</h1>
     <p>I'm an awesome User!</p>
-    <button>Change My Name</button>
+    <button v-on:click="changeName">Change My Name</button>
     <hr>
     <div class="row">
       <div class="col-12 col-sm-6">
-        <app-user-detail></app-user-detail>
+        <app-user-detail :name="name"></app-user-detail>
       </div>
       <div class="col-12 col-sm-6">
         <app-user-edit></app-user-edit>
@@ -20,6 +20,16 @@ import UserEdit from "./UserEdit.vue";
 import UserDetail from "./UserDetials.vue";
 
 export default {
+  data() {
+    return {
+      name: "gaurav"
+    };
+  },
+  methods: {
+    changeName() {
+      this.name = "asdasdass";
+    }
+  },
   components: {
     appUserDetail: UserDetail,
     appUserEdit: UserEdit
