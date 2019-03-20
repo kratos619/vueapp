@@ -6,7 +6,8 @@
     <hr>
     <div class="row">
       <div class="col-12 col-sm-6">
-        <app-user-detail :name="name"></app-user-detail>
+        <p v-for="(item, index) in readDataFromChild" :key="index">{{item.name}}</p>
+        <app-user-detail v-on:sendDataToParent="readDataFromChild = $event" :myName="name"></app-user-detail>
       </div>
       <div class="col-12 col-sm-6">
         <app-user-edit></app-user-edit>
@@ -22,6 +23,7 @@ import UserDetail from "./UserDetials.vue";
 export default {
   data() {
     return {
+      readDataFromChild: "",
       name: "gaurav"
     };
   },
