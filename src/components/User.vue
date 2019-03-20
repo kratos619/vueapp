@@ -7,7 +7,11 @@
     <div class="row">
       <div class="col-12 col-sm-6">
         <p v-for="(item, index) in readDataFromChild" :key="index">{{item.name}}</p>
-        <app-user-detail v-on:sendDataToParent="readDataFromChild = $event" :myName="name"></app-user-detail>
+        <app-user-detail
+          v-on:sendDataToParent="readDataFromChild = $event"
+          :myName="name"
+          :childComponentMethodName="resetNameByParentComponent"
+        ></app-user-detail>
       </div>
       <div class="col-12 col-sm-6">
         <app-user-edit></app-user-edit>
@@ -30,6 +34,9 @@ export default {
   methods: {
     changeName() {
       this.name = "asdasdass";
+    },
+    resetNameByParentComponent() {
+      this.name = "name change by parent resetNameByParentComponent() method";
     }
   },
   components: {

@@ -4,13 +4,17 @@
     <p>Many Details</p>
     <p>use Name : {{myName}}</p>
     <button v-on:click="resetName">reset Nmae</button>
-    <button>rest Name</button>
+    <button v-on:click="childComponentMethodName">rest Name</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["myName", "secondData"],
+  props: {
+    myName: "",
+    secondData: "",
+    childComponentMethodName: Function
+  },
   methods: {
     switchName() {
       return this.myName
