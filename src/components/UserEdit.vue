@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
   data() {
     return {
@@ -17,6 +18,8 @@ export default {
   methods: {
     editAge() {
       this.userAge = 23;
+      // this.$emit("ageWas", this.userAge);
+      eventBus.$emit("ageWas", this.userAge);
     }
   }
 };

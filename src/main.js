@@ -7,6 +7,8 @@ import VueResource from 'vue-resource';
 
 Vue.use(VueResource)
 
+export const eventBus = new Vue();
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

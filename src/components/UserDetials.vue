@@ -5,11 +5,12 @@
     <p>use Name : {{myName}}</p>
     <p>User Age : {{userAge}}</p>
     <button v-on:click="resetName">reset Nmae</button>
-    <button v-on:click="childComponentMethodName">rest Name</button>
+    <!-- <button v-on:click="childComponentMethodName">rest Name</button> -->
   </div>
 </template>
 
 <script>
+import { eventBus } from "../main";
 export default {
   data() {
     return {
@@ -47,6 +48,11 @@ export default {
       }
     ];
     this.$emit("sendDataToParent", this.secondData);
+  },
+  created() {
+    eventBus.$on("ageWasedited", age => {
+      this.userAge = age;
+    });
   }
 };
 </script>
