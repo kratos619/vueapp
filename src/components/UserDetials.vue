@@ -11,11 +11,13 @@
 
 <script>
 export default {
-  props: {
-    myName: "",
-    secondData: "",
-    childComponentMethodName: Function,
-    userAge: ""
+  data() {
+    return {
+      myName: "",
+      secondData: "",
+      childComponentMethodName: Function,
+      userAge: ""
+    };
   },
   methods: {
     switchName() {

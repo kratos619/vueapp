@@ -9,7 +9,11 @@
 
 <script>
 export default {
-  props: ["userAge"],
+  data() {
+    return {
+      userAge: 22
+    };
+  },
   methods: {
     editAge() {
       this.userAge = 23;

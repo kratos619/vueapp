@@ -15,7 +15,7 @@
         ></app-user-detail>
       </div>
       <div class="col-12 col-sm-6">
-        <app-user-edit :userAge="age"></app-user-edit>
+        <app-user-edit :userAge="age" v-on:ageWas="age = $event"></app-user-edit>
       </div>
     </div>
   </div>
@@ -26,11 +26,15 @@ import UserEdit from "./UserEdit.vue";
 import UserDetail from "./UserDetials.vue";
 
 export default {
+  components: {
+    appUserDetail: UserDetail,
+    appUserEdit: UserEdit
+  },
   data() {
     return {
       readDataFromChild: "",
       name: "gaurav",
-      age: ""
+      age: "11"
     };
   },
   methods: {
@@ -40,10 +44,6 @@ export default {
     resetNameByParentComponent() {
       this.name = "name change by parent resetNameByParentComponent() method";
     }
-  },
-  components: {
-    appUserDetail: UserDetail,
-    appUserEdit: UserEdit
   }
 };
 </script>
