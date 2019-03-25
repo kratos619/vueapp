@@ -4,8 +4,12 @@
       <div class="row">
         <div class="col-md-6 mx-auto">
           <h1>Routing</h1>
-          <Header></Header>
+
+          <router-view name="header"></router-view>
+          <hr>
           <router-view></router-view>
+          <hr>
+          <router-view name="footer"></router-view>
         </div>
       </div>
     </div>
