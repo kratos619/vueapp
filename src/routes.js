@@ -16,7 +16,8 @@ export const routes = [{
       },
       {
         path: ':id/edit',
-        component: UserEdit
+        component: UserEdit,
+        name: 'userEdit'
       },
     ]
   },
