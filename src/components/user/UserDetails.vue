@@ -2,7 +2,10 @@
   <div>
     <h3>Some User Details</h3>
     <p>User Loaded Has ID : {{id}}</p>
-    <router-link tag="button" v-bind:to="{name : 'userEdit' , params : {id: id}}">Edit User</router-link>
+    <router-link
+      tag="button"
+      v-bind:to="{name : 'userEdit' , params : {id: id}, query:{local : 'en' , q : 100}}"
+    >Edit User</router-link>
   </div>
 </template>
 
