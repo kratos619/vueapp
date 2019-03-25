@@ -5,7 +5,10 @@
         <router-link exact class="nav-link" to="/">Home</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link" to="/user">User</router-link>
+        <router-link class="nav-link" to="/user/11">User 1</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link class="nav-link" to="/user/111">User 2</router-link>
       </li>
     </ul>
   </div>
