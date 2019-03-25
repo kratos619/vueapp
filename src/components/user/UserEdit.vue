@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div>edit</div>
+</template>
 
 <script>
 export default {};
