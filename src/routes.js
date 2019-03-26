@@ -32,5 +32,9 @@ export const routes = [{
       default: Home,
       'header': Header
     }
+  },
+  {
+    path: '*',
+    redirect: '/'
   }
 ]
