@@ -4,7 +4,7 @@
     <p>User Loaded Has ID : {{id}}</p>
     <router-link
       tag="button"
-      v-bind:to="{name : 'userEdit' , params : {id: id}, query:{local : 'en' , q : 100}}"
+      v-bind:to="{name : 'userEdit' , params : {id: id}, query:{local : 'en' , q : 100},hash:'#extraData'}"
     >Edit User</router-link>
   </div>
 </template>

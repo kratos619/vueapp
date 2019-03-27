@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="animated jackInTheBox">
     <h1>The Home Page</h1>
     <hr>
     <p>
