@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <h1>vuex...</h1>
-    <AnotherResult></AnotherResult>
-    <Result v-bind:counter="counter"></Result>
-    <Counter v-on:counterUpdate="counter += $event"></Counter>
-    <br>
-    <AnotherCounter></AnotherCounter>
+    <div class="container">
+      <h1>vuex...</h1>
+      <AnotherResult></AnotherResult>
+      <Result v-bind:counter="counter"></Result>
+      <Counter v-on:counterUpdate="counter += $event"></Counter>
+      <br>
+      <AnotherCounter></AnotherCounter>
+    </div>
   </div>
 </template>
 
