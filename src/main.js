@@ -21,6 +21,12 @@ const router = new VueRouter({
     }
   }
 });
+
+router.beforeEach((to, from, next) => {
+  console.log('befour each route');
+  next();
+});
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
